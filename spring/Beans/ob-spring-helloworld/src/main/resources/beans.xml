@@ -10,6 +10,8 @@
 
     <bean id="gestorFacturas" class="com.example.GestorFacturas">
         <!-- collaborators and configuration for this bean go here -->
+        <constructor-arg name="calculatorService" ref="calculatorService"/>
+        <constructor-arg name="nombre" value="nombre"/>
     </bean>
 
     <!-- more bean definitions go here -->
