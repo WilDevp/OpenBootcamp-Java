@@ -33,6 +33,7 @@ public class Main {
         //CONCEPTO 3: scope o alcance -> los beans por defecto son singlenton, se crea el objeto
         // y se reutilza para toda la aplicación
         //podemos cambialo a scope="prototype" si queremos que se cree un nuevo objeto cada vez
+        //Podemos verificarlo viendo como se ejecuta varias veces el constructor
 
     }
 }
