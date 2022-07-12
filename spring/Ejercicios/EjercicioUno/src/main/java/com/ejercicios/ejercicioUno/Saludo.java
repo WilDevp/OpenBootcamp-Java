@@ -1,4 +1,4 @@
-package com.ejercicios;
+package com.ejercicios.ejercicioUno;
 
 public class Saludo {
     public String saludo(){

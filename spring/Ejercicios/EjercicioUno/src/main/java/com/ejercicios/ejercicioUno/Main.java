@@ -1,4 +1,4 @@
-package com.ejercicios;
+package com.ejercicios.ejercicioUno;
 
 /*
 Ejercicio 1
