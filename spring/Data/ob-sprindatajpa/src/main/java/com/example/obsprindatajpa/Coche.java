@@ -1,4 +1,4 @@
-package com.example.obspringdatajpa;
+package com.example.obsprindatajpa;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,26 +7,28 @@ import javax.persistence.Id;
 
 @Entity
 public class Coche {
-    //Atributos
+
+    // atributos encapsulados
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String manufacturing;
+    private String manufacturer;
     private String model;
     private Integer year;
 
-    //constructores
+    // constructores
+
     public Coche() {
     }
 
-    public Coche(Long id, String manufacturing, String model, Integer year) {
+    public Coche(Long id, String manufacturer, String model, Integer year) {
         this.id = id;
-        this.manufacturing = manufacturing;
+        this.manufacturer = manufacturer;
         this.model = model;
         this.year = year;
     }
 
-    //getter and seeter
+    // getter y setter
 
     public Long getId() {
         return id;
@@ -36,12 +38,12 @@ public class Coche {
         this.id = id;
     }
 
-    public String getManufacturing() {
-        return manufacturing;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setManufacturing(String manufacturing) {
-        this.manufacturing = manufacturing;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public String getModel() {
@@ -60,13 +62,12 @@ public class Coche {
         this.year = year;
     }
 
-    //toString
-
+    // tostring
     @Override
     public String toString() {
         return "Coche{" +
                 "id=" + id +
-                ", manufacturing='" + manufacturing + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
                 ", model='" + model + '\'' +
                 ", year=" + year +
                 '}';
