@@ -1,9 +1,15 @@
 package com.example.restdatajpa.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "books")
 public class Book {
+
     //Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String autor;
@@ -87,8 +93,7 @@ public class Book {
     }
 
     //ToString
-
-    @Override
+ /*   @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
@@ -99,5 +104,5 @@ public class Book {
                 ", realeaseDate=" + realeaseDate +
                 ", online=" + online +
                 '}';
-    }
+    }*/
 }

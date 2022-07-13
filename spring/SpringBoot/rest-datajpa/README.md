@@ -10,3 +10,9 @@ proyecto Spring Boot con las dependencias / startes:
 Aplicación Api Rest con acceso a base de datos de H2 para persistir la información.
 
 El acceso se puede realizar desde un programa como Postma, Insomnia etc...
+
+## Entidad Book
+
+1. Book
+2. BookReposirtory
+3. BookController
