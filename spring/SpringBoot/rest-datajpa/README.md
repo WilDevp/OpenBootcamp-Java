@@ -16,3 +16,9 @@ El acceso se puede realizar desde un programa como Postma, Insomnia etc...
 1. Book
 2. BookReposirtory
 3. BookController
+    1. Buscar todos los libros
+    2. Buscar solo un libro
+    3. crear un nuevo libro
+    4. Actualizar un nuevo libro
+    5. Borrar un libro
+    6. Borrar todos los libros
