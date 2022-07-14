@@ -2,7 +2,9 @@ package com.example.restdatajpa.controller;
 
 import com.example.restdatajpa.model.Book;
 import com.example.restdatajpa.repository.BookRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -39,8 +41,26 @@ public class BookController {
      * @return
      */
     //Buscar por un book por Id
-//    @GetMapping("/api/book/{id}")
-//    public Book findById(Long id){
-//        return repository.findById(id);
-//    }
+    @GetMapping("/api/books/{id}")
+    public ResponseEntity<Book> findById(@PathVariable Long id){
+       Optional<Book> opBook =  repository.findById(id);
+
+       //Opcion 1.
+       /* if (opBook.isPresent())
+            return opBook.get();
+        else
+            return null;*/
+        //Opciion 2.
+        //return opBook.orElse(null);
+
+        //Opcion 3.
+        if (opBook.isPresent())
+            return ResponseEntity.ok(opBook.get());
+        else
+            return ResponseEntity.notFound().build();
+
+
+        //Opcion 4.(Programaión funcional
+        //return opBook.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
