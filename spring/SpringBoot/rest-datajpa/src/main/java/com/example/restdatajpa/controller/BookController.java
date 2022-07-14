@@ -2,10 +2,9 @@ package com.example.restdatajpa.controller;
 
 import com.example.restdatajpa.model.Book;
 import com.example.restdatajpa.repository.BookRepository;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +35,7 @@ public class BookController {
     }
 
     /**
-     * http://localhost:8080/api/book/1
+     * http://localhost:8080/api/books/1
      *
      * @return
      */
@@ -63,4 +62,29 @@ public class BookController {
         //Opcion 4.(Programaión funcional
         //return opBook.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    /**
+     * http://localhost:8080/api/books
+     *
+     * @return
+     */
+
+    //Guardar un libro
+    @PostMapping("/api/books")
+    public Book create(@RequestBody Book book, @RequestHeader HttpHeaders headers){
+        System.out.println(headers.get("User-Agent"));
+        //Guardar el libro reibido
+        return repository.save(book);
+
+    }
+
+    /**
+     * http://localhost:8080/api/books
+     *
+     * @return
+     */
+
+    //Actualizar un libro existente
+
+
 }
