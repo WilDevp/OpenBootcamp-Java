@@ -72,8 +72,8 @@ public class BookController {
     //Guardar un libro
     @PostMapping("/api/books")
     public Book create(@RequestBody Book book, @RequestHeader HttpHeaders headers){
-        System.out.println(headers.get("User-Agent"));
-        //Guardar el libro reibido
+        //System.out.println(headers.get("User-Agent"));
+        //Guardar el libro recibido
         return repository.save(book);
 
     }
@@ -85,6 +85,9 @@ public class BookController {
      */
 
     //Actualizar un libro existente
+    @PutMapping("/api/books")
+    public Book update(@P){
 
+    }
 
 }
